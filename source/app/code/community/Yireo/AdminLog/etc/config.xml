@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Yireo AdminLog for Magento
+ *
+ * @package Yireo_AdminLog
+ * @author Yireo (http://www.yireo.com/)
+ * @copyright Copyright 2014 Yireo (http://www.yireo.com/)
+ * @license Open Source License (OSL v3)
+ * @link http://www.yireo.com
+ */
+-->
+<config>
+
+    <modules>
+        <Yireo_AdminLog>
+            <version>0.0.1</version>
+        </Yireo_AdminLog>
+    </modules>
+
+    <global>
+        <helpers>
+            <adminlog>
+                <class>Yireo_AdminLog_Helper</class>
+            </adminlog>
+        </helpers>
+
+        <models>
+            <adminlog>
+                <class>Yireo_AdminLog_Model</class>
+            </adminlog>
+        </models>
+
+		<events>
+            <admin_session_user_login_success>
+                <observers>
+                    <adminlog_admin_session_user_login_success>
+                        <type>singleton</type>
+                        <class>Yireo_AdminLog_Model_Observer</class>
+                        <method>adminSessionUserLoginSuccess</method>
+                    </adminlog_admin_session_user_login_success>
+                </observers>
+            </admin_session_user_login_success>
+            <adminhtml_customer_save_after>
+                <observers>
+                    <adminlog_adminhtml_customer_save_after>
+                        <type>singleton</type>
+                        <class>Yireo_AdminLog_Model_Observer</class>
+                        <method>adminhtmlCustomerSaveAfter</method>
+                    </adminlog_adminhtml_customer_save_after>
+                </observers>
+            </adminhtml_customer_save_after>
+            <adminhtml_customer_delete_after>
+                <observers>
+                    <adminlog_adminhtml_customer_delete_after>
+                        <type>singleton</type>
+                        <class>Yireo_AdminLog_Model_Observer</class>
+                        <method>adminhtmlCustomerDeleteAfter</method>
+                    </adminlog_adminhtml_customer_delete_after>
+                </observers>
+            </adminhtml_customer_delete_after>
+            <catalog_product_save_after>
+                <observers>
+                    <adminlog_catalog_product_save_after>
+                        <type>singleton</type>
+                        <class>Yireo_AdminLog_Model_Observer</class>
+                        <method>catalogProductSaveAfter</method>
+                    </adminlog_catalog_product_save_after>
+                </observers>
+            </catalog_product_save_after>
+            <catalog_product_delete_after>
+                <observers>
+                    <adminlog_catalog_product_delete_after>
+                        <type>singleton</type>
+                        <class>Yireo_AdminLog_Model_Observer</class>
+                        <method>catalogProductDeleteAfter</method>
+                    </adminlog_catalog_product_delete_after>
+                </observers>
+            </catalog_product_delete_after>
+            <catalog_category_save_after>
+                <observers>
+                    <adminlog_catalog_category_save_after>
+                        <type>singleton</type>
+                        <class>Yireo_AdminLog_Model_Observer</class>
+                        <method>catalogCategorySaveAfter</method>
+                    </adminlog_catalog_category_save_after>
+                </observers>
+            </catalog_category_save_after>
+            <catalog_category_delete_after>
+                <observers>
+                    <adminlog_catalog_category_delete_after>
+                        <type>singleton</type>
+                        <class>Yireo_AdminLog_Model_Observer</class>
+                        <method>catalogCategoryDeleteAfter</method>
+                    </adminlog_catalog_category_delete_after>
+                </observers>
+            </catalog_category_delete_after>
+		</events>
+	</global>
+
+    <adminhtml>
+        <translate>
+            <modules>
+                <Yireo_AdminLog>
+                    <files>
+                        <default>Yireo_AdminLog.csv</default>
+                    </files>
+                </Yireo_AdminLog>
+            </modules>
+        </translate>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <adminlog translate="title" module="adminlog">
+                                            <title>AdminLog Section</title>
+                                        </adminlog>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+
+    <default>
+        <adminlog>
+            <settings>
+                <enable>1</enable>
+            </settings>
+        </adminlog>
+    </default>
+</config>

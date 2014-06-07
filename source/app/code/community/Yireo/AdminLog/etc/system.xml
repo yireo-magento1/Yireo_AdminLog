@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Yireo ProfilerLog for Magento
+ *
+ * @package Yireo_ProfilerLog
+ * @author Yireo (http://www.yireo.com/)
+ * @copyright Copyright 2014 Yireo (http://www.yireo.com/)
+ * @license Open Source License (OSL v3)
+ * @link http://www.yireo.com
+ */
+-->
+<config>
+    <sections>
+        <profilerlog translate="label" module="profilerlog">
+            <label>Yireo ProfilerLog</label>
+            <tab>advanced</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>342</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <settings translate="label">
+                    <label>Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <enable translate="label">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </enable>
+                        <autodisable_count translate="label">
+                            <label>Auto Disable After X Records</label>
+                            <comment><![CDATA[Automatically stop logging when there are more than X records]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </autodisable_count>
+                        <autodisable_check translate="label">
+                            <label>Auto Disable Check After X</label>
+                            <comment><![CDATA[Check to auto disable every X records]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </autodisable_check>
+                        <sql_profiling translate="label">
+                            <label>Log SQL Profiling</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </sql_profiling>
+                    </fields>
+                </settings>
+            </groups>
+        </profilerlog>
+    </sections>
+</config>
