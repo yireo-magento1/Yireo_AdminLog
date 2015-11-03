@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Yireo_AdminLog>
-            <active>true</active>
+            <active>false</active>
             <codePool>community</codePool>
         </Yireo_AdminLog>
     </modules>
